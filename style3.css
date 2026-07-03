@@ -1,0 +1,299 @@
+/* ==========================================
+   HEADER
+========================================== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:90px;
+    background:rgba(0,0,0,0.85);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 60px;
+    z-index:1000;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    width:75px;
+    height:75px;
+    object-fit:contain;
+    border-radius:50%;
+    transition:.4s;
+    display:block;
+}
+
+.logo img:hover{
+    transform:rotate(10deg) scale(1.08);
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+nav ul{
+    display:flex;
+    align-items:center;
+    list-style:none;
+    gap:35px;
+}
+
+nav ul li{
+    list-style:none;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    position:relative;
+    transition:.3s;
+    padding:5px 0;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:3px;
+    background:#f7b500;
+    transition:.4s;
+    border-radius:5px;
+}
+
+nav ul li a:hover{
+    color:#f7b500;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+nav ul li a.active{
+    color:#f7b500;
+}
+
+nav ul li a.active::after{
+    width:100%;
+}
+
+/* ==========================================
+   GALLERY
+========================================== */
+
+.gallery{
+    width:90%;
+    max-width:1300px;
+    margin:140px auto 60px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.gallery .card{
+    overflow:hidden;
+    border-radius:15px;
+    background:#fff;
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+    transition:.4s;
+}
+
+.gallery .card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
+    transition:.5s;
+}
+
+.gallery .card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.gallery .card:hover img{
+    transform:scale(1.1);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+header{
+    padding:0 30px;
+}
+
+nav ul{
+    gap:20px;
+}
+
+nav ul li a{
+    font-size:16px;
+}
+
+.logo img{
+    width:65px;
+    height:65px;
+}
+
+}
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+    height:auto;
+    padding:15px;
+}
+
+.logo{
+    margin-bottom:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.gallery{
+    margin-top:180px;
+}
+
+.gallery .card img{
+    height:220px;
+}
+
+}
+
+@media(max-width:480px){
+
+.logo img{
+    width:60px;
+    height:60px;
+}
+
+nav ul li a{
+    font-size:15px;
+}
+
+.gallery{
+    width:95%;
+}
+
+.gallery .card img{
+    height:200px;
+}
+
+}
+/* ===========================
+   Footer
+=========================== */
+
+footer{
+    background:#0b1f3a;
+    color:#fff;
+    padding:40px 20px;
+    text-align:center;
+    margin-top:60px;
+}
+
+.footer-content{
+    max-width:900px;
+    margin:auto;
+}
+
+.footer-content h2{
+    color:#FFD700;
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.footer-content p{
+    font-size:17px;
+    line-height:1.8;
+    color:#ddd;
+}
+
+.footer-content hr{
+    width:120px;
+    height:3px;
+    background:#FFD700;
+    border:none;
+    margin:20px auto;
+    border-radius:5px;
+}
+
+.copyright{
+    font-size:15px;
+    color:#bbb;
+}
+/* ===============================
+   Gallery Hero Section
+================================== */
+
+.gallery-hero{
+    width:100%;
+    height:40vh;
+    background:
+    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)),
+    url("images/gallery-banner.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    margin-top:90px;
+}
+
+.overlay{
+    max-width:900px;
+    padding:20px;
+}
+
+.overlay h1{
+
+    color:#fff;
+    font-size:48px;
+    font-weight:700;
+    margin-bottom:30px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+
+}
+
+.overlay p{
+
+    color:#fff;
+    font-size:18px;
+    line-height:1.0;
+    background:rgba(255,255,255,.12);
+    padding:10px 20px;
+    border-left:6px solid #f7b500;
+    border-radius:12px;
+    display:inline-block;
+    backdrop-filter:blur(5px);
+
+}

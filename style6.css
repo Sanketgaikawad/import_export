@@ -1,0 +1,283 @@
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:90px;
+    background:rgba(0,0,0,.85);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 60px;
+    z-index:1000;
+}
+
+/* LOGO */
+
+.logo img{
+    width:75px;
+    height:75px;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+/* NAV */
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    color:#fff;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+    position:relative;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:#f7b500;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:3px;
+    background:#f7b500;
+    transition:.4s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after{
+    width:100%;
+}
+
+/* ===========================
+   LOGIN / SIGNUP PAGE BACKGROUND
+=========================== */
+
+.login-page{
+    width:100%;
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url("https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1920&q=80");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding-top:120px;
+    padding-bottom:60px;
+}
+
+/* ===========================
+   BOX
+=========================== */
+
+.login-box{
+    width:420px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(18px);
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.4);
+}
+
+/* ICON */
+
+.icon{
+    width:85px;
+    height:85px;
+    margin:auto;
+    background:#f7b500;
+    color:#fff;
+    font-size:35px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+/* TEXT */
+
+.login-box h2{
+    color:#fff;
+    font-size:30px;
+}
+
+.login-box p{
+    color:#ddd;
+    margin:10px 0 25px;
+}
+
+/* INPUT */
+
+.input-box{
+    position:relative;
+    margin-bottom:18px;
+}
+
+.input-box i{
+    position:absolute;
+    left:15px;
+    top:16px;
+    color:#666;
+}
+
+.input-box input{
+    width:100%;
+    padding:14px 14px 14px 45px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+}
+
+/* BUTTON */
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    background:#f7b500;
+    color:#fff;
+    font-size:18px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#0b1f3a;
+}
+
+/* REGISTER TEXT */
+
+.register{
+    margin-top:20px;
+    color:#fff;
+}
+
+.register a{
+    color:#FFD700;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+    height:auto;
+    padding:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin-top:15px;
+}
+
+.login-box{
+    width:90%;
+    padding:25px;
+}
+
+}
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+    background:#0b1f3a;
+    color:#fff;
+    padding:50px 20px;
+    text-align:center;
+    margin-top:60px;
+}
+
+.footer-container{
+    max-width:1000px;
+    margin:auto;
+}
+
+.footer-container h2{
+    color:#FFD700;
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.footer-container p{
+    color:#ddd;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.footer-links{
+    margin:20px 0;
+}
+
+.footer-links a{
+    color:#fff;
+    text-decoration:none;
+    margin:0 12px;
+    font-size:16px;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#f7b500;
+}
+
+footer hr{
+    border:none;
+    height:1px;
+    background:#444;
+    margin:20px auto;
+    width:60%;
+}
+
+.copy{
+    font-size:14px;
+    color:#aaa;
+}

@@ -1,0 +1,381 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:90px;
+    background:rgba(0,0,0,.85);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 60px;
+    z-index:1000;
+}
+
+/* Logo */
+
+.logo img{
+    width:75px;
+    height:75px;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+/* Navigation */
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav ul li{
+    list-style:none;
+}
+
+nav ul li a{
+    color:#fff;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+    position:relative;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:#f7b500;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:3px;
+    background:#f7b500;
+    transition:.4s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after{
+    width:100%;
+}
+
+/* ==========================================
+   LOGIN PAGE
+========================================== */
+
+.login-page{
+
+    width:100%;
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url("https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1920&q=80");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding-top:100px;
+    padding-bottom:60px;
+
+}
+
+/* Login Box */
+
+.login-box{
+
+    width:420px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(15px);
+
+    padding:40px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.4);
+
+}
+
+/* Icon */
+
+.icon{
+
+    width:90px;
+    height:90px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#f7b500;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+}
+
+/* Heading */
+
+.login-box h2{
+
+    color:#fff;
+
+    font-size:32px;
+
+}
+
+.login-box p{
+
+    color:#ddd;
+
+    margin:10px 0 30px;
+
+}
+
+/* Input */
+
+.input-box{
+
+    position:relative;
+
+    margin-bottom:20px;
+
+}
+
+.input-box i{
+
+    position:absolute;
+
+    left:18px;
+
+    top:17px;
+
+    color:#666;
+
+}
+
+.input-box input{
+
+    width:100%;
+
+    padding:15px 15px 15px 50px;
+
+    border:none;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:16px;
+
+}
+
+/* Remember */
+
+.remember{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:14px;
+
+    margin-bottom:20px;
+
+}
+
+.remember a{
+
+    color:#FFD700;
+
+    text-decoration:none;
+
+}
+
+/* Button */
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    background:#f7b500;
+
+    color:#fff;
+
+    font-size:18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#0b1f3a;
+
+}
+
+/* Register */
+
+.register{
+
+    margin-top:20px;
+
+    color:#fff;
+
+}
+
+.register a{
+
+    color:#FFD700;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+
+    background:#0b1f3a;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:30px 20px;
+
+}
+
+.footer-content h2{
+
+    color:#FFD700;
+
+    margin-bottom:10px;
+
+}
+
+.footer-content p{
+
+    line-height:1.8;
+
+}
+
+.footer-content hr{
+
+    width:120px;
+
+    margin:20px auto;
+
+    border:2px solid #FFD700;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+header{
+
+    flex-direction:column;
+    height:auto;
+    padding:20px;
+
+}
+
+nav ul{
+
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin-top:15px;
+
+}
+
+.login-box{
+
+    width:90%;
+    padding:30px;
+
+}
+
+.logo img{
+
+    width:65px;
+    height:65px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.login-box h2{
+
+    font-size:26px;
+
+}
+
+nav ul li a{
+
+    font-size:15px;
+
+}
+
+}
