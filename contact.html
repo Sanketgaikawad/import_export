@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Contact Us | YVS International</title>
 
     <link rel="stylesheet" href="style4.css">
-
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
-
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
-
 <header>
-
     <nav>
 
         <div class="logo">
@@ -29,23 +21,15 @@
 
         <ul>
             <li><a href="index.html">Home</a></li>
-
             <li><a href="about.html">About</a></li>
-
             <li><a href="services.html">Services</a></li>
-
             <li><a href="products.html">Products</a></li>
-
-            <li><a href="contact.html">Contact</a></li>
-
+            <li><a href="contact.html" class="active">Contact</a></li>
             <li><a href="login.html">Login</a></li>
         </ul>
 
     </nav>
-
 </header>
-
-<!-- ================= CONTACT FORM ================= -->
 
 <section class="contact-section">
 
@@ -62,27 +46,33 @@
             <input
                 type="text"
                 id="fullName"
+                name="entry.882498564"
                 placeholder="Full Name"
                 required>
 
             <input
                 type="email"
                 id="email"
+                name="entry.350435166"
                 placeholder="Email Address"
                 required>
 
             <input
                 type="tel"
                 id="phone"
-                placeholder="Phone Number">
+                name="entry.183780824"
+                placeholder="Phone Number"
+                required>
 
             <input
                 type="text"
                 id="subject"
-                placeholder="Subject">
+                placeholder="Subject"
+                required>
 
             <textarea
                 id="message"
+                name="entry.667496053"
                 rows="6"
                 placeholder="Write Your Message..."
                 required></textarea>
@@ -97,24 +87,12 @@
 
 </section>
 
-<!-- ================= FOOTER ================= -->
-
 <footer>
-
-    <p>
-        © 2026 YVS International. All Rights Reserved.
-    </p>
-
+    <p>© 2026 YVS International. All Rights Reserved.</p>
 </footer>
 
-<!-- ================= SUPABASE ================= -->
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<!-- ================= JS ================= -->
-
 <script src="script.js"></script>
 
 </body>
-
 </html>

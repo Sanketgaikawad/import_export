@@ -11,45 +11,85 @@ const db = createClient(supabaseUrl, supabaseKey);
 console.log("✅ Supabase Connected");
 
 // =========================
-// Contact Form Submit
+// Contact Form
 // =========================
 
-const form = document.getElementById("contactForm");
+document.addEventListener("DOMContentLoaded", () => {
 
-form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+    const form = document.getElementById("contactForm");
 
-    const full_name = document.getElementById("fullName").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const subject = document.getElementById("subject").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    // Validation
-    if (!full_name || !email || !phone || !subject || !message) {
-        alert("⚠️ Please fill all fields.");
+    if (!form) {
+        console.error("❌ contactForm not found!");
         return;
     }
 
-    // Insert into Supabase
-    const { data, error } = await db
-        .from("import")
-        .insert([
-            {
-                full_name: full_name,
-                email: email,
-                phone: phone,
-                subject: subject,
-                message: message
-            }
-        ]);
+    form.addEventListener("submit", async (e) => {
 
-    if (error) {
-        console.error("Supabase Error:", error);
-        alert("❌ Error: " + error.message);
-    } else {
-        console.log("Inserted:", data);
-        alert("✅ Message Sent Successfully!");
-        form.reset();
-    }
+        e.preventDefault();
+
+        const full_name = document.getElementById("fullName").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const subject = document.getElementById("subject").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!full_name || !email || !phone || !subject || !message) {
+            alert("⚠️ Please fill all fields.");
+            return;
+        }
+
+        try {
+
+            // =========================
+            // Save to Supabase
+            // =========================
+
+            const { error } = await db
+                .from("import")
+                .insert([
+                    {
+                        full_name,
+                        email,
+                        phone,
+                        subject,
+                        message
+                    }
+                ]);
+
+            if (error) throw error;
+
+            console.log("✅ Saved to Supabase");
+
+           // Save to Google Sheet
+await fetch("https://script.google.com/macros/s/AKfycbxg5Oe1wvMy9M5K-3ss_IlLZiG5yXiYdgQ_Nj7rCHWhk1F569X29lJZTsmicIsLW36d/exec", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        full_name: full_name,
+        email: email,
+        phone: phone,
+        subject: subject,
+        message: message
+    })
+});
+
+console.log("✅ Saved to Google Sheet");
+            
+
+            alert("✅ Message Sent Successfully!");
+
+            form.reset();
+
+        } catch (err) {
+
+            console.error(err);
+
+            alert("❌ " + err.message);
+
+        }
+
+    });
+
 });
