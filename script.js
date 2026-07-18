@@ -61,8 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("✅ Saved to Supabase");
 
            // Save to Google Sheet
-await fetch("https://script.google.com/macros/s/AKfycbxg5Oe1wvMy9M5K-3ss_IlLZiG5yXiYdgQ_Nj7rCHWhk1F569X29lJZTsmicIsLW36d/exec", {
+await fetch("https://script.google.com/macros/s/AKfycby5QJjpvjAG6pY_6hgrvhbU8mWRLssiMf3SxgVQmb3aBTwz1aXvwRho70LRuGk-osef/exec", {
     method: "POST",
+    mode: "no-cors",
     headers: {
         "Content-Type": "application/json"
     },
